@@ -16,7 +16,8 @@ git checkout master
 git branch -D nightly-build 2>/dev/null
 
 info "Checking out latest nightly"
-git fetch --all --tags
+git tag -d nightly
+git fetch --tags
 git checkout tags/nightly -b nightly-build
 
 info "Cleaning up build dir"
